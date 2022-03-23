@@ -4,6 +4,12 @@
 
 ###### Writing a program that demonstrates that Vos Savant is correct. You will use the output of your program to convince your interviewer that, after the host opens a door, switching doors is always the correct choice.
 
+# User Story:
+
+- ###### There will be three closed doors and the user will be given a choice to choose one of them. there is a car behind one of the doors, the other doors contain goats. it will function as the computer knows about the placement of the car and goats.
+- ###### After the user chooses a door, the game itself will open one of the other two doors that will carry a goat.
+- ###### The user may wish to stick with there original choice or switch the door.
+
 # I need to complete these requirements:
 
 - [ ] Gain an understanding of the problem - perhaps see how your friends react if you play the part of the host.
