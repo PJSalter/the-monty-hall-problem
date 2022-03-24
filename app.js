@@ -90,8 +90,38 @@ const randomiseThoseDoors = () => {
 		doorNumOneWillOpen = youLost;
 	}
 }
+
+// function to display the result of the player if they were to switch and win.
+const mindChangeAndWon = () => {
+	body.hidden = true;
+	switchAndWin.hidden = false;
+}
+
+// function to display results on when a player will switch but then lose by ther choice of switching.
+const mindChangeAndLost = () => {
+    body.hidden = true;
+    switchAndLose.hidden = false;
+}
+
+// a function that contains results for when a user doesn't switch and the wins.
+const wonWithoutSwitching = () => {
+    body.hidden = true;
+    noSwitchAndWin.hidden = false;
+}
+
+// function to display results when a user does not switch and then loses.
+const lostAndNoSwitch = () => {
+    body.hidden = true;
+    noSwitchAndLose.hidden = false;
+}
+
+
 // Calling the randomise functionality of the doors.
 randomiseThoseDoors();
+
+//******************//
+  //event handler on click for Door One
+//******************//
 
 // handling a click once user chooses to open door number one.
 doorImgOne.addEventListener('click', () => {
@@ -173,12 +203,19 @@ doorImgOne.addEventListener('click', () => {
 		
 		// Conditions to display the result page
 		if (doorNumOneWillOpen === youLost) {
-			setTimeout(() => { noSwitchAndLose(); }, 3500)
+            //error to fix
+			setTimeout(() => { lostAndNoSwitch(); }, 3500)
 		} else {
-			setTimeout(() => { noSwitchAndWin(); }, 3500)
+			setTimeout(() => { wonWithoutSwitching(); }, 3500)
 		}
 	})
 })
+
+//event handler for second door.
+
+// event handler for third door.
+
+
 
 
 

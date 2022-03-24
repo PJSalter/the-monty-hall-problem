@@ -4,15 +4,33 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
-    background-color: #27e761;
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: #27e761;
+    min-height: 100vh;
 }
 
+header{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.875rem;
+    text-align: center;
+}
+
+.to-do{
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.875rem;
+    margin: 1.875rem 0rem;
+}
 .door-set {
     text-align: center;
     margin-top: 2.5rem;
@@ -25,4 +43,51 @@ body{
     margin-bottom: 2.5rem;
     cursor: pointer;
     border: 0.625rem solid rgb(245, 68, 68);
+}
+
+.pressButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18.75rem;
+    height: 3.125rem;
+}
+
+button{
+    padding: 0.625rem 2.5rem;
+    background-color:#ffb3ba;
+    border: none;
+    border-radius: 3.125rem;
+    color: #bae1ff;
+    cursor: pointer;
+    margin: 0rem 1.25rem;
+    font-size: 1.125rem;
+    outline:none;
+    box-shadow: 0.625rem 0.313rem 0.313rem red;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+.result p {
+    font-size: 1.375rem;
+    line-height: 2.5rem;
+    text-align: center;
+}
+ 
+.result p:first-child {
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    margin-bottom: 1.875rem;
+}
+
+.result a {
+    color: #f6aa90;
+    background-color: #d5b6d5;
+    text-decoration: none;
+}
+.result a:hover {
+    color: #ffffba;
 }
