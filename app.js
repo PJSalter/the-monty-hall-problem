@@ -211,6 +211,10 @@ doorImgOne.addEventListener('click', () => {
 	})
 })
 
+//event handler for second door.
+
+// event handler for third door.
+
 
 
 
