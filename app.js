@@ -173,6 +173,7 @@ doorImgOne.addEventListener('click', () => {
 		
 		// Conditions to display the result page
 		if (doorNumOneWillOpen === youLost) {
+            //error to fix
 			setTimeout(() => { noSwitchAndLose(); }, 3500)
 		} else {
 			setTimeout(() => { noSwitchAndWin(); }, 3500)
