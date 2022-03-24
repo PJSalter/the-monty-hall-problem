@@ -61,6 +61,16 @@ let doorNumTwoWillOpen;
 let doorNumThreeWillOpen;
 let yayForWinner;
 
+// Hiding all the elements that do not need to be visoble at all times.
+secondRow.hidden = true;
+SwitchAndWin.hidden = true;
+SwitchAndLose.hidden = true;
+NoSwitchAndWin.hidden = true;
+NoSwitchAndLose.hidden = true;
+d1.hidden = true;
+d2.hidden = true;
+d3.hidden = true;
+
 
 
 
