@@ -187,6 +187,12 @@ const switchAndWin = () => {
 	switchAndWin.hidden = false;
 }
 
+// function to display results on when a player will switch but then lose by ther choice of switching.
+const switchAndLose = () => {
+    body.hidden = true;
+    switchAndLose.hidden = false;
+}
+
 
 
 
