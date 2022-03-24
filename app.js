@@ -71,7 +71,7 @@ d1.hidden = true;
 d2.hidden = true;
 d3.hidden = true;
 
-
+// now to create a function that will shuffle each door at random every time.
 
 
 
