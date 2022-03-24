@@ -47,5 +47,16 @@ console.log(NoSwitchAndWin);
 const NoSwitchAndLose = document.querySelector("#NoSwitchAndLose");
 console.log(NoSwitchAndLose);
 
+// the image of a car.
+const medalWinner = "challenge-image/car.jpeg" 
+console.log(medalWinner);
+
+// the image of a goat.
+const youLost = "challenge-image/goat.jpeg"
+console.log(youLost);
+
+
+
+
 
 
