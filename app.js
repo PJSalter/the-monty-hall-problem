@@ -38,14 +38,14 @@ const doorImgThree = document.getElementById('doorThree');
 console.log(doorImgThree);
 
 // DOM picking up the probabilities.
-const SwitchAndWin = document.querySelector("#choiceIsYours");
-console.log(SwitchAndWin);
-const SwitchAndLose = document.querySelector("#LossPropability");
-console.log(SwitchAndLose);
-const NoSwitchAndWin = document.querySelector("#chooseToNotSwitchAndWin");
-console.log(NoSwitchAndWin);
-const NoSwitchAndLose = document.querySelector("#NoSwitchAndLose");
-console.log(NoSwitchAndLose);
+const switchAndWin = document.querySelector("#choiceIsYours");
+console.log(switchAndWin);
+const switchAndLose = document.querySelector("#LossPropability");
+console.log(switchAndLose);
+const noSwitchAndWin = document.querySelector("#chooseToNotSwitchAndWin");
+console.log(noSwitchAndWin);
+const noSwitchAndLose = document.querySelector("#NoSwitchAndLose");
+console.log(noSwitchAndLose);
 
 // the image of a car.
 const medalWinner = "challenge-image/car.jpeg" 
@@ -90,8 +90,98 @@ const randomiseThoseDoors = () => {
 		doorNumOneWillOpen = youLost;
 	}
 }
-// Calling the function
+// Calling the randomise functionality of the doors.
 randomiseThoseDoors();
+
+// handling a click once user chooses to open door number one.
+doorImgOne.addEventListener('click', () => {
+
+	// Revealing necessary elements with messages in good timing to appear.
+	firstRow.hidden = true;
+	d1.hidden = false;
+	setTimeout(()=>{
+		d1.hidden = true;
+	},1000);
+	setTimeout(()=>{
+		secondRow.hidden = false;
+	},1000);
+
+	// this will display a goat behind the door.
+	if (doorNumTwoWillOpen === youLost) {
+		setTimeout(() =>
+		{ doorNumTwoWillOpen.src = doorNumTwoWillOpen; }, 2000);
+
+	} else if (doorNumThreeWillOpen === youLost) {
+		setTimeout(() =>
+		{ doorNumThreeWillOpen.src = doorNumThreeWillOpen; }, 2000);
+	}
+
+	//handling if the user makes a decision to switch yes, then the button will click.
+    switchForYes.addEventListener('click', () => {
+
+		// if user opens the second door
+		// a message will appear on the app screen.
+		if (doorImgTwo.src === medalWinner){
+			secondRow.hidden = true;
+			instruct.innerHTML = "You chose to change to the third door";
+			setTimeout(()=>{
+				instruct.innerHTML =
+				"exciting, we can now reveal this latest door";
+			},1000);
+
+			// to open the door of choice by user.
+			setTimeout(() =>
+			{ doorImgThree.src = doorNumThreeWillOpen; }, 2500);
+
+			//will show a condition of the results on the actual page.
+			if (doorNumThreeWillOpen === youLost) {
+				setTimeout(() => { switchAndLose(); }, 3500)
+			} else {
+				setTimeout(() => { switchAndWin(); }, 3500)
+			}
+		}
+		//if the user chooses door three to open.
+		else if (doorImgThree.src === youLost) {
+			secondRow.hidden = true;
+			instruct.innerHTML = "You wanted to open the second door";
+			setTimeout(()=>{
+				instruct.innerHTML =
+				"exciting to reveal the second door";
+			},1000);
+			
+			// for opening the door.
+			setTimeout(() => { doorImgTwo.src = doorNumTwoWillOpen; }, 2500);
+			//this will show the results page.
+			if (doorNumTwoWillOpen === youLost) {
+				setTimeout(() => { switchAndLose(); }, 3500)
+			} else {
+				setTimeout(() => { switchAndWin(); }, 3500)
+			}
+		}
+	})
+	//handling if the user does not want to switch.
+    switchForNo.addEventListener('click', () => {
+	
+		secondRow.hidden = true;
+		instruct.innerHTML = "you chose the first door";
+		setTimeout(() =>
+		{ instruct.innerHTML =
+		"finding out whats behind the first door is exciting"; }, 1000);
+		
+		// Opening the chosen door
+		setTimeout(() => { doorImgOne.src = doorNumOneWillOpen; }, 2500);
+		
+		// Conditions to display the result page
+		if (doorNumOneWillOpen === youLost) {
+			setTimeout(() => { noSwitchAndLose(); }, 3500)
+		} else {
+			setTimeout(() => { noSwitchAndWin(); }, 3500)
+		}
+	})
+})
+
+
+
 
 
 
