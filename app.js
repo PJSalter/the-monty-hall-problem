@@ -55,6 +55,13 @@ console.log(medalWinner);
 const youLost = "challenge-image/goat.jpeg"
 console.log(youLost);
 
+// the variables for adding all the different doors.
+let doorNumOneWillOpen;
+let doorNumTwoWillOpen;
+let doorNumThreeWillOpen;
+let yayForWinner;
+
+
 
 
 
