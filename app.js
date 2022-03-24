@@ -181,6 +181,14 @@ doorImgOne.addEventListener('click', () => {
 	})
 })
 
+// function to display the result of the player if they were to switch and win.
+const switchAndWin = () => {
+	body.hidden = true;
+	switchAndWin.hidden = false;
+}
+
+
+
 
 
 
