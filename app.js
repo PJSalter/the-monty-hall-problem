@@ -73,6 +73,25 @@ d3.hidden = true;
 
 // now to create a function that will shuffle each door at random every time.
 
+// Function to randomly shuffle the doors
+const randomiseThoseDoors = () => {
+	yayForWinner = Math.floor(Math.random() * 3);
+	if (yayForWinner === 1) {
+		doorNumOneWillOpen = medalWinner;
+        doorNumTwoWillOpen = youLost;
+        doorNumThreeWillOpen = youLost;
+	} else if (yayForWinner === 2) {
+		doorNumTwoWillOpen = medalWinner;
+		doorNumOneWillOpen = youLost;
+		doorNumThreeWillOpen = youLost;
+	} else {
+		doorNumThreeWillOpen = medalWinner;
+		doorNumTwoWillOpen = youLost;
+		doorNumOneWillOpen = youLost;
+	}
+}
+// Calling the function
+randomiseThoseDoors();
 
 
 
