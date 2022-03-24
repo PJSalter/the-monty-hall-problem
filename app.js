@@ -193,10 +193,16 @@ const switchAndLose = () => {
     switchAndLose.hidden = false;
 }
 
-// a function that contains results for when a user doesn't switch and the immdiately wins.
+// a function that contains results for when a user doesn't switch and the wins.
 const noSwitchAndWin = () => {
     body.hidden = true;
     noSwitchAndWin.hidden = false;
+}
+
+// function to display results when a user does not switch and then loses.
+const noSwitchAndLose = () => {
+    body.hidden = true;
+    noSwitchAndLose.hidden = false;
 }
 
 
