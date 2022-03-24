@@ -8,6 +8,7 @@
     <title>the-monty-hall</title>
 </head>
 <body>
+    <main>
 
     <!-- This game will need space for the hose where they will interact -->
     <!-- The three doors section -->
@@ -67,8 +68,43 @@
     <!-- Play Again Button -->
     <button>Play again?</button>
 
+    <div id="LossPropability" class="result">
+
+        <p>Game Over! You Lose!</p>
+
+        <p>The chances of winning were slim, However you still lost</p>
+
+        <p>second times a charm, you want to try again?</p>
+
+        <button><a href="index.html">Play again</a></button>
+
+        <div id="chooseToNotSwitchAndWin" class="result"></div>
+
+        <p>YAAAAAAY Congrats</p>
+
+        <p>You are a very lucky person</p>
+
+        <p>the winning probability was low, however you still won</p>
+
+        <button><a href="index.html">
+            Play again</a>
+          </button>
+           
+          <!-- user chose to not switch and lost -->
+          <div id="NoSwitchAndLose" class="result"></div>
+
+           
+          <p>NOOOOOOOO YOU LOST</p>
+ 
+          <p>Since you didn't switch, your chances
+            of winning were very slim indeed</p>
+ 
+          <p>Play again to redefine your luck</p>
+
+          <button><a href="index.html">Play again</a></button>
 
 
+          </main>
     <script src="app.js"></script>
 </body>
 </html>
