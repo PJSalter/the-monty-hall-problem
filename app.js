@@ -67,6 +67,7 @@ let yayForWinner;
 // Hiding all the elements that do not need to be visoble at all times.
 secondRow.hidden = true;
 
+// hidden messages for properbility.
 switchAndWin.hidden = true;
 switchAndLose.hidden = true;
 noSwitchAndWin.hidden = true;
