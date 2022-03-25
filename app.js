@@ -3,7 +3,7 @@
  ****************/
 
 //picking up the main body of the page.
-const wholeBody = document.querySelector('#total-structure');
+const wholeBody = document.getElementById('total-structure');
 //console.log(wholeBody);
 
 // const playAgain = document.querySelector('.reset-to-play-again');
@@ -67,10 +67,10 @@ let yayForWinner;
 // Hiding all the elements that do not need to be visoble at all times.
 secondRow.hidden = true;
 
-choiceIsYours.hidden = true;
-LossPropability.hidden = true;
-chooseToNotSwitchAndWin.hidden = true;
-NoSwitchAndLose.hidden = true;
+switchAndWin.hidden = true;
+switchAndLose.hidden = true;
+noSwitchAndWin.hidden = true;
+noSwitchAndLose.hidden = true;
 
 d1.hidden = true;
 d2.hidden = true;
@@ -102,7 +102,7 @@ randomiseThoseDoors();
 // function to display the result of the player if they were to switch and win.
 const mindChangeAndWon = () => {
 	wholeBody.hidden = true;
-	choiceIsYours.hidden = false;
+	switchAndWin.hidden = false;
     // playAgain.style.display = 'flex';
     // getResult.style.display = 'flex';
 }
@@ -110,7 +110,7 @@ const mindChangeAndWon = () => {
 // function to display results on when a player will switch but then lose by ther choice of switching.
 const mindChangeAndLost = () => {
     wholeBody.hidden = true;
-    LossPropability.hidden = false;
+    switchAndLose.hidden = false;
     // playAgain.style.display = 'flex';
     // getResult.style.display = 'flex';
 }
@@ -118,7 +118,7 @@ const mindChangeAndLost = () => {
 // a function that contains results for when a user doesn't switch and the wins.
 const wonWithoutSwitching = () => {
     wholeBody.hidden = true;
-    chooseToNotSwitchAndWin.hidden = false;
+    noSwitchAndWin.hidden = false;
     // playAgain.style.display = 'flex';
     // getResult.style.display = 'flex';
 }
@@ -126,7 +126,7 @@ const wonWithoutSwitching = () => {
 // function to display results when a user does not switch and then loses.
 const lostAndNoSwitch = () => {
     wholeBody.hidden = true;
-    NoSwitchAndLose.hidden = false;
+    noSwitchAndLose.hidden = false;
     // playAgain.style.display = 'flex';
     // getResult.style.display = 'flex';
 }
