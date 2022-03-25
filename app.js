@@ -99,38 +99,6 @@ const randomiseThoseDoors = () => {
 // Calling the randomise functionality of the doors.
 randomiseThoseDoors();
 
-// function to display the result of the player if they were to switch and win.
-const mindChangeAndWon = () => {
-	wholeBody.hidden = true;
-	switchAndWin.hidden = false;
-    // playAgain.style.display = 'flex';
-    // getResult.style.display = 'flex';
-}
-
-// function to display results on when a player will switch but then lose by ther choice of switching.
-const mindChangeAndLost = () => {
-    wholeBody.hidden = true;
-    switchAndLose.hidden = false;
-    // playAgain.style.display = 'flex';
-    // getResult.style.display = 'flex';
-}
-
-// a function that contains results for when a user doesn't switch and the wins.
-const wonWithoutSwitching = () => {
-    wholeBody.hidden = true;
-    noSwitchAndWin.hidden = false;
-    // playAgain.style.display = 'flex';
-    // getResult.style.display = 'flex';
-}
-
-// function to display results when a user does not switch and then loses.
-const lostAndNoSwitch = () => {
-    wholeBody.hidden = true;
-    noSwitchAndLose.hidden = false;
-    // playAgain.style.display = 'flex';
-    // getResult.style.display = 'flex';
-}
-
 //******************//
   //event handler on click for Door One
 //******************//
@@ -340,6 +308,40 @@ switchForNo.addEventListener('click', () => {
 
 	})
 })
+
+
+
+// function to display the result of the player if they were to switch and win.
+const mindChangeAndWon = () => {
+	wholeBody.hidden = true;
+	switchAndWin.hidden = false;
+    // playAgain.style.display = 'flex';
+    // getResult.style.display = 'flex';
+}
+
+// function to display results on when a player will switch but then lose by ther choice of switching.
+const mindChangeAndLost = () => {
+    wholeBody.hidden = true;
+    switchAndLose.hidden = false;
+    // playAgain.style.display = 'flex';
+    // getResult.style.display = 'flex';
+}
+
+// a function that contains results for when a user doesn't switch and the wins.
+const wonWithoutSwitching = () => {
+    wholeBody.hidden = true;
+    noSwitchAndWin.hidden = false;
+    // playAgain.style.display = 'flex';
+    // getResult.style.display = 'flex';
+}
+
+// function to display results when a user does not switch and then loses.
+const lostAndNoSwitch = () => {
+    wholeBody.hidden = true;
+    noSwitchAndLose.hidden = false;
+    // playAgain.style.display = 'flex';
+    // getResult.style.display = 'flex';
+}
 
 
 
