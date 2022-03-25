@@ -62,7 +62,7 @@ button{
     cursor: pointer;
     margin: 0rem 1.25rem;
     font-size: 1.125rem;
-    outline:none;
+    /* outline:none; */
     box-shadow: 0.625rem 0.313rem 0.313rem red;
 }
 
@@ -90,4 +90,11 @@ button:active {
 }
 .result a:hover {
     color: #ffffba;
+}
+
+.reset-to-play-again{
+    width: 100vw;
+    height: 10vw;
+    text-align: center;
+    margin: 2.5rem 0rem;
 }
