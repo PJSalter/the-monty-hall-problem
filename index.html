@@ -16,7 +16,6 @@
 
     <header>
         <h1>The Monty Hall Experience</h1>
-        <p>Do you dare?</p>
     </header>
 
     <section id="to-do" class="to-do">
@@ -60,51 +59,55 @@
     <div id="choiceIsYours" class="result"></div>
 
     <p>Yay you have won the game congrats WOOP WOOP</p>
-
     <P>Great call on the switch</P>
-
     <p>probability has increased greatly by winning</p>
-
+    
+    <div class="reset-to-play-again">
     <!-- Play Again Button -->
-    <button>Play again?</button>
+    <button><a href="index.html">Play again?</a></button>
+
+    </div>
 
     <div id="LossPropability" class="result">
 
-        <p>Game Over! You Lose!</p>
+    <p>Game Over! You Lose!</p>
+    <p>The chances of winning were slim, However you still lost</p>
+    <p>second times a charm, you want to try again?</p>
 
-        <p>The chances of winning were slim, However you still lost</p>
-
-        <p>second times a charm, you want to try again?</p>
+        <div class="reset-to-play-again">
 
         <button><a href="index.html">Play again</a></button>
 
+        </div>
+
         <div id="chooseToNotSwitchAndWin" class="result"></div>
 
-        <p>YAAAAAAY Congrats</p>
+    <p>YAAAAAAY Congrats</p>
+    <p>You are a very lucky person</p>
+    <p>the winning probability was low, however you still won</p>
+        
+        <div class="reset-to-play-again">
 
-        <p>You are a very lucky person</p>
+        <button><a href="index.html">Play again</a></button>
 
-        <p>the winning probability was low, however you still won</p>
-
-        <button><a href="index.html">
-            Play again</a>
-          </button>
+        </div>
            
           <!-- user chose to not switch and lost -->
           <div id="NoSwitchAndLose" class="result"></div>
 
            
-          <p>NOOOOOOOO YOU LOST</p>
- 
-          <p>Since you didn't switch, your chances
-            of winning were very slim indeed</p>
- 
-          <p>Play again to redefine your luck</p>
+    <p>NOOOOOOOO YOU LOST</p>
+    <p>Since you didn't switch, your chances of winning were very slim indeed</p>
+    <p>Play again to redefine your luck</p>
+
+          <div class="reset-to-play-again">
 
           <button><a href="index.html">Play again</a></button>
 
+          </div>
+
 
           </main>
-    <script src="app.js"></script>
+    <script src="app.js" async defer></script>
 </body>
 </html>
