@@ -8,7 +8,7 @@
     <title>the-monty-hall</title>
 </head>
 <body>
-    <main>
+    <main id="total-structure">
 
     <!-- This game will need space for the hose where they will interact -->
     <!-- The three doors section -->
@@ -56,7 +56,7 @@
     </section>
     
     <!-- div element indicating the result -->
-    <div id="choiceIsYours" class="result"></div>
+    <div id="choiceIsYours" class="result">
 
     <p>Yay you have won the game congrats WOOP WOOP</p>
     <P>Great call on the switch</P>
@@ -66,6 +66,7 @@
     <!-- Play Again Button -->
     <button><a href="index.html">Play again?</a></button>
 
+    </div>
     </div>
 
     <div id="LossPropability" class="result">
@@ -80,7 +81,9 @@
 
         </div>
 
-        <div id="chooseToNotSwitchAndWin" class="result"></div>
+    </div>
+
+    <div id="chooseToNotSwitchAndWin" class="result">
 
     <p>YAAAAAAY Congrats</p>
     <p>You are a very lucky person</p>
@@ -91,9 +94,10 @@
         <button><a href="index.html">Play again</a></button>
 
         </div>
+    </div>
            
           <!-- user chose to not switch and lost -->
-          <div id="NoSwitchAndLose" class="result"></div>
+    <div id="NoSwitchAndLose" class="result">
 
            
     <p>NOOOOOOOO YOU LOST</p>
@@ -105,9 +109,10 @@
           <button><a href="index.html">Play again</a></button>
 
           </div>
+    </div>
 
 
-          </main>
-    <script src="app.js" async defer></script>
+</main>
+    <script src="app.js"></script>
 </body>
 </html>
