@@ -3,57 +3,60 @@
  ****************/
 
 //picking up the main body of the page.
-const wholeBody = document.querySelector('main');
-console.log(wholeBody);
+const wholeBody = document.getElementById('total-structure');
+//console.log(wholeBody);
+
+// const playAgain = document.querySelector('.reset-to-play-again');
+// const getResult = document.querySelector('.result');
 
 // picking up the instructions.
 const instruct = document.querySelector('#to-do');
-console.log(instruct);
+//console.log(instruct);
 
 const firstRow = document.querySelector('#rowNumOne');
-console.log(firstRow);
+//console.log(firstRow);
 const secondRow = document.querySelector('#rowNumTwo');
-console.log(secondRow);
+//console.log(secondRow);
 
 //DOM manipulation for all three propability doors.
 const d1 = document.querySelector('#doorNumOne');
-console.log(d1);
+//console.log(d1);
 const d2 = document.querySelector('#doorNumTwo');
-console.log(d2);
+//console.log(d2);
 const d3 = document.querySelector('#doorNumThree');
-console.log(d3);
+//console.log(d3);
 
 // buttons for yes or no.
 const switchForYes = document.getElementById('yes-button');
-console.log(switchForYes);
+//console.log(switchForYes);
 const switchForNo = document.getElementById('no-button');
-console.log(switchForNo);
+//console.log(switchForNo);
 
 // picking up the images for each door.
 const doorImgOne = document.getElementById('doorOne');
-console.log(doorImgOne);
+//console.log(doorImgOne);
 const doorImgTwo = document.getElementById('doorTwo');
-console.log(doorImgTwo);
+//console.log(doorImgTwo);
 const doorImgThree = document.getElementById('doorThree');
-console.log(doorImgThree);
+//console.log(doorImgThree);
 
 // DOM picking up the probabilities.
 const switchAndWin = document.querySelector("#choiceIsYours");
-console.log(switchAndWin);
+//console.log(switchAndWin);
 const switchAndLose = document.querySelector("#LossPropability");
-console.log(switchAndLose);
+//console.log(switchAndLose);
 const noSwitchAndWin = document.querySelector("#chooseToNotSwitchAndWin");
-console.log(noSwitchAndWin);
+//console.log(noSwitchAndWin);
 const noSwitchAndLose = document.querySelector("#NoSwitchAndLose");
-console.log(noSwitchAndLose);
+//console.log(noSwitchAndLose);
 
 // the image of a car.
 const medalWinner = "challenge-image/car.jpeg" 
-console.log(medalWinner);
+//console.log(medalWinner);
 
 // the image of a goat.
 const youLost = "challenge-image/goat.jpeg"
-console.log(youLost);
+//console.log(youLost);
 
 // the variables for adding all the different doors.
 let doorNumOneWillOpen;
@@ -63,10 +66,13 @@ let yayForWinner;
 
 // Hiding all the elements that do not need to be visoble at all times.
 secondRow.hidden = true;
+
+// hidden messages for properbility.
 switchAndWin.hidden = true;
 switchAndLose.hidden = true;
 noSwitchAndWin.hidden = true;
 noSwitchAndLose.hidden = true;
+
 d1.hidden = true;
 d2.hidden = true;
 d3.hidden = true;
@@ -91,31 +97,6 @@ const randomiseThoseDoors = () => {
 	}
 }
 
-// function to display the result of the player if they were to switch and win.
-const mindChangeAndWon = () => {
-	body.hidden = true;
-	switchAndWin.hidden = false;
-}
-
-// function to display results on when a player will switch but then lose by ther choice of switching.
-const mindChangeAndLost = () => {
-    body.hidden = true;
-    switchAndLose.hidden = false;
-}
-
-// a function that contains results for when a user doesn't switch and the wins.
-const wonWithoutSwitching = () => {
-    body.hidden = true;
-    noSwitchAndWin.hidden = false;
-}
-
-// function to display results when a user does not switch and then loses.
-const lostAndNoSwitch = () => {
-    body.hidden = true;
-    noSwitchAndLose.hidden = false;
-}
-
-
 // Calling the randomise functionality of the doors.
 randomiseThoseDoors();
 
@@ -139,11 +120,11 @@ doorImgOne.addEventListener('click', () => {
 	// this will display a goat behind the door.
 	if (doorNumTwoWillOpen === youLost) {
 		setTimeout(() =>
-		{ doorNumTwoWillOpen.src = doorNumTwoWillOpen; }, 2000);
+		{ doorImgTwo.src = doorNumTwoWillOpen; }, 2000);
 
 	} else if (doorNumThreeWillOpen === youLost) {
 		setTimeout(() =>
-		{ doorNumThreeWillOpen.src = doorNumThreeWillOpen; }, 2000);
+		{ doorImgThree.src = doorNumThreeWillOpen; }, 2000);
 	}
 
 	//handling if the user makes a decision to switch yes, then the button will click.
@@ -151,7 +132,7 @@ doorImgOne.addEventListener('click', () => {
 
 		// if user opens the second door
 		// a message will appear on the app screen.
-		if (doorImgTwo.src === medalWinner){
+		if (doorImgTwo.src === "challenge-image/goat.jpeg"){
 			secondRow.hidden = true;
 			instruct.innerHTML = "You chose to change to the third door";
 			setTimeout(()=>{
@@ -165,13 +146,13 @@ doorImgOne.addEventListener('click', () => {
 
 			//will show a condition of the results on the actual page.
 			if (doorNumThreeWillOpen === youLost) {
-				setTimeout(() => { switchAndLose(); }, 3500)
+				setTimeout(() => { mindChangeAndLost(); }, 3500)
 			} else {
-				setTimeout(() => { switchAndWin(); }, 3500)
+				setTimeout(() => { mindChangeAndWon(); }, 3500)
 			}
 		}
 		//if the user chooses door three to open.
-		else if (doorImgThree.src === youLost) {
+		else if (doorImgThree.src === "challenge-image/goat.jpeg") {
 			secondRow.hidden = true;
 			instruct.innerHTML = "You wanted to open the second door";
 			setTimeout(()=>{
@@ -183,12 +164,13 @@ doorImgOne.addEventListener('click', () => {
 			setTimeout(() => { doorImgTwo.src = doorNumTwoWillOpen; }, 2500);
 			//this will show the results page.
 			if (doorNumTwoWillOpen === youLost) {
-				setTimeout(() => { switchAndLose(); }, 3500)
+				setTimeout(() => { mindChangeAndLost(); }, 3500)
 			} else {
-				setTimeout(() => { switchAndWin(); }, 3500)
+				setTimeout(() => { mindChangeAndWon(); }, 3500)
 			}
 		}
 	})
+    
 	//handling if the user does not want to switch.
     switchForNo.addEventListener('click', () => {
 	
@@ -211,9 +193,158 @@ doorImgOne.addEventListener('click', () => {
 	})
 })
 
+
 //event handler for second door.
 
+doorImgTwo.addEventListener('click', () => {
+	firstRow.hidden = true;
+	d2.hidden = false;
+	setTimeout(() => { d2.hidden = true; }, 1000);
+	setTimeout(() => { secondRow.hidden = false; }, 1000)
+
+	if (doorNumOneWillOpen === youLost) {
+		setTimeout(() =>
+		{ doorImgOne.src = doorNumOneWillOpen; }, 2000);
+
+	} else if (doorNumThreeWillOpen === youLost) {
+		setTimeout(() =>
+		{ doorImgThree.src = doorNumThreeWillOpen; }, 2000);
+	}
+
+    switchForYes.addEventListener('click', () => {
+		if (doorImgOne.src === "challenge-image/goat.jpeg") {
+			secondRow.hidden = true;
+			instruct.innerHTML = "You wanted to change to door three"
+			setTimeout(() =>
+			{ instruct.innerHTML =
+			"whats the new door............"; }, 1000);
+			setTimeout(() => { doorImgThree.src = doorNumThreeWillOpen; }, 2500);
+			if (doorNumThreeWillOpen === youLost) {
+				setTimeout(() => { mindChangeAndLost(); }, 3500)
+			} else {
+				setTimeout(() => { mindChangeAndWon(); }, 3500)
+			}
+		} else if (doorImgThree.src === "challenge-image/goat.jpeg") {
+			secondRow.hidden = true;
+			instruct.innerHTML = "switching with door one";
+			setTimeout(() => { instruct.innerHTML
+			= "Revealing your chosen door......"; }, 1000);
+			setTimeout(() => { doorImgOne.src = doorNumOneWillOpen; }, 2500);
+			if (doorNumOneWillOpen === youLost) {
+				setTimeout(() => { mindChangeAndLost(); }, 3500)
+			} else {
+				setTimeout(() => { mindChangeAndWon(); }, 3500)
+			}
+		}
+	})
+
+    switchForNo.addEventListener('click', () => {
+		secondRow.hidden = true;
+		instruct.innerHTML = "you still have a choice with door two"
+		setTimeout(() => { instruct.innerHTML =
+		"what will door two reveal....."; }, 1000);
+		setTimeout(() => { doorImgTwo.src = doorNumTwoWillOpen; }, 2500);
+		if (doorNumTwoWillOpen === youLost) {
+			setTimeout(() => { lostAndNoSwitch(); }, 3500)
+		} else {
+			setTimeout(() => { wonWithoutSwitching(); }, 3500)
+		}
+	})
+})
+
+
 // event handler for third door.
+
+doorImgThree.addEventListener('click', () => {
+	firstRow.hidden = true;
+	d3.hidden = false;
+	setTimeout(() => { d3.hidden = true; }, 1000);
+	setTimeout(() => { secondRow.hidden = false; }, 1000)
+
+	if (doorNumOneWillOpen === youLost) {
+		setTimeout(() => { doorImgOne.src = doorNumOneWillOpen; }, 2000);
+
+	} else if (doorNumTwoWillOpen === youLost) {
+		setTimeout(() => { doorImgTwo.src = doorNumTwoWillOpen; }, 2000);
+	}
+    
+    switchForYes.addEventListener('click', () => {
+		if (doorImgOne.src === "challenge-image/goat.jpeg") {
+			secondRow.hidden = true;
+			instruct.innerHTML = "switching it up toward the second door"
+			setTimeout(() => { instruct.innerHTML =
+			"what will door two reveal"; }, 1000);
+			setTimeout(() => { doorImgTwo.src = doorNumTwoWillOpen; }, 2500);
+			if (doorNumTwoWillOpen === youLost) {
+				setTimeout(() => { mindChangeAndLost(); }, 3500)
+			} else {
+				setTimeout(() => { mindChangeAndWon(); }, 3500)
+			}
+		} else if (doorImgTwo.src === "challenge-image/goat.jpeg") {
+			secondRow.hidden = true;
+			instruct.innerHTML = "switching it up to the first door"
+			setTimeout(() => { instruct.innerHTML =
+			"what will be revealed....."; }, 1000);
+			setTimeout(() => { doorImgOne.src = doorNumOneWillOpen; }, 2500);
+			if (doorNumOneWillOpen === youLost) {
+				setTimeout(() => { mindChangeAndLost(); }, 3500)
+			} else {
+				setTimeout(() => { mindChangeAndWon(); }, 3500)
+			}
+		}
+	})
+    
+switchForNo.addEventListener('click', () => {
+		
+        secondRow.hidden = true;
+        instruct.innerHTML = "your choice will stay as door number three"
+        setTimeout(() => { instruct.innerHTML =
+        "I wonder whats underneath door number three........."; }, 1000);
+        setTimeout(() => { doorImgThree.src = doorNumThreeWillOpen; }, 2500);
+        if (doorNumThreeWillOpen === youLost) {
+	    setTimeout(() => { lostAndNoSwitch(); }, 3500)
+        } else {  
+        setTimeout(() => { wonWithoutSwitching(); }, 3500)
+		}
+
+	})
+})
+
+
+
+// function to display the result of the player if they were to switch and win.
+const mindChangeAndWon = () => {
+	wholeBody.hidden = true;
+	switchAndWin.hidden = false;
+    // playAgain.style.display = 'flex';
+    // getResult.style.display = 'flex';
+}
+
+// function to display results on when a player will switch but then lose by ther choice of switching.
+const mindChangeAndLost = () => {
+    wholeBody.hidden = true;
+    switchAndLose.hidden = false;
+    // playAgain.style.display = 'flex';
+    // getResult.style.display = 'flex';
+}
+
+// a function that contains results for when a user doesn't switch and the wins.
+const wonWithoutSwitching = () => {
+    wholeBody.hidden = true;
+    noSwitchAndWin.hidden = false;
+    // playAgain.style.display = 'flex';
+    // getResult.style.display = 'flex';
+}
+
+// function to display results when a user does not switch and then loses.
+const lostAndNoSwitch = () => {
+    wholeBody.hidden = true;
+    noSwitchAndLose.hidden = false;
+    // playAgain.style.display = 'flex';
+    // getResult.style.display = 'flex';
+}
+
+
 
 
 
