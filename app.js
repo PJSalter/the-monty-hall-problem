@@ -3,8 +3,11 @@
  ****************/
 
 //picking up the main body of the page.
-const wholeBody = document.querySelector('main');
+const wholeBody = document.querySelector('#total-structure');
 //console.log(wholeBody);
+
+// const playAgain = document.querySelector('.reset-to-play-again');
+// const getResult = document.querySelector('.result');
 
 // picking up the instructions.
 const instruct = document.querySelector('#to-do');
@@ -100,24 +103,32 @@ randomiseThoseDoors();
 const mindChangeAndWon = () => {
 	wholeBody.hidden = true;
 	choiceIsYours.hidden = false;
+    // playAgain.style.display = 'flex';
+    // getResult.style.display = 'flex';
 }
 
 // function to display results on when a player will switch but then lose by ther choice of switching.
 const mindChangeAndLost = () => {
     wholeBody.hidden = true;
     LossPropability.hidden = false;
+    // playAgain.style.display = 'flex';
+    // getResult.style.display = 'flex';
 }
 
 // a function that contains results for when a user doesn't switch and the wins.
 const wonWithoutSwitching = () => {
     wholeBody.hidden = true;
     chooseToNotSwitchAndWin.hidden = false;
+    // playAgain.style.display = 'flex';
+    // getResult.style.display = 'flex';
 }
 
 // function to display results when a user does not switch and then loses.
 const lostAndNoSwitch = () => {
     wholeBody.hidden = true;
     NoSwitchAndLose.hidden = false;
+    // playAgain.style.display = 'flex';
+    // getResult.style.display = 'flex';
 }
 
 //******************//
@@ -138,21 +149,21 @@ doorImgOne.addEventListener('click', () => {
 	},1000);
 
 	// this will display a goat behind the door.
-	if (doorNumTwoWillOpen === "challenge-image/goat.jpeg") {
+	if (doorNumTwoWillOpen === youLost) {
 		setTimeout(() =>
-		{ doorNumTwoWillOpen.src = doorNumTwoWillOpen; }, 2000);
+		{ doorImgTwo.src = doorNumTwoWillOpen; }, 2000);
 
-	} else if (doorNumThreeWillOpen === "challenge-image/goat.jpeg") {
+	} else if (doorNumThreeWillOpen === youLost) {
 		setTimeout(() =>
-		{ doorNumThreeWillOpen.src = doorNumThreeWillOpen; }, 2000);
+		{ doorImgThree.src = doorNumThreeWillOpen; }, 2000);
 	}
 
 	//handling if the user makes a decision to switch yes, then the button will click.
-    switchForNo.addEventListener('click', () => {
+    switchForYes.addEventListener('click', () => {
 
 		// if user opens the second door
 		// a message will appear on the app screen.
-		if (doorImgTwo.src === medalWinner){
+		if (doorImgTwo.src === "challenge-image/goat.jpeg"){
 			secondRow.hidden = true;
 			instruct.innerHTML = "You chose to change to the third door";
 			setTimeout(()=>{
@@ -172,7 +183,7 @@ doorImgOne.addEventListener('click', () => {
 			}
 		}
 		//if the user chooses door three to open.
-		else if (doorImgThree.src === youLost) {
+		else if (doorImgThree.src === "challenge-image/goat.jpeg") {
 			secondRow.hidden = true;
 			instruct.innerHTML = "You wanted to open the second door";
 			setTimeout(()=>{
@@ -192,7 +203,7 @@ doorImgOne.addEventListener('click', () => {
 	})
     
 	//handling if the user does not want to switch.
-    switchForYes.addEventListener('click', () => {
+    switchForNo.addEventListener('click', () => {
 	
 		secondRow.hidden = true;
 		instruct.innerHTML = "you chose the first door";
@@ -231,7 +242,7 @@ doorImgTwo.addEventListener('click', () => {
 		{ doorImgThree.src = doorNumThreeWillOpen; }, 2000);
 	}
 
-    switchForNo.addEventListener('click', () => {
+    switchForYes.addEventListener('click', () => {
 		if (doorImgOne.src === "challenge-image/goat.jpeg") {
 			secondRow.hidden = true;
 			instruct.innerHTML = "You wanted to change to door three"
@@ -258,7 +269,7 @@ doorImgTwo.addEventListener('click', () => {
 		}
 	})
 
-    switchForYes.addEventListener('click', () => {
+    switchForNo.addEventListener('click', () => {
 		secondRow.hidden = true;
 		instruct.innerHTML = "you still have a choice with door two"
 		setTimeout(() => { instruct.innerHTML =
@@ -288,7 +299,7 @@ doorImgThree.addEventListener('click', () => {
 		setTimeout(() => { doorImgTwo.src = doorNumTwoWillOpen; }, 2000);
 	}
     
-    switchForNo.addEventListener('click', () => {
+    switchForYes.addEventListener('click', () => {
 		if (doorImgOne.src === "challenge-image/goat.jpeg") {
 			secondRow.hidden = true;
 			instruct.innerHTML = "switching it up toward the second door"
@@ -314,7 +325,7 @@ doorImgThree.addEventListener('click', () => {
 		}
 	})
     
-switchForYes.addEventListener('click', () => {
+switchForNo.addEventListener('click', () => {
 		
         secondRow.hidden = true;
         instruct.innerHTML = "your choice will stay as door number three"
