@@ -39,6 +39,9 @@
 - ###### 3.) Ask if user wants to change mind.
 - ###### 4.) Car or Goat.
 
+![goat](https://user-images.githubusercontent.com/45575016/160248710-9f8f1f53-ae58-4be4-b992-7c1620e27a6f.gif)
+
+
 ### ✨ See the Monty Hall Problem [live here](https://pjsalter.github.io/the-monty-hall-problem) 🚪 🐐 🚙
 
 
