@@ -1,4 +1,4 @@
-# the-monty-hall-problem :door:
+# the-monty-hall-problem :door: 🐐 🚗
 
 ###### creating an intepretation of The Monty Hall problem which was tasked by Zaizi, this is a probability puzzle that catches many people out when first encountered. Vos Savant presented a solution that was, initially, rejected in the popular media of the day.
 
@@ -33,5 +33,7 @@
 - ###### 2.) Eliminate door.
 - ###### 3.) Ask if user wants to change mind.
 - ###### 4.) Car or Goat.
+
+### ✨ See the Monty Hall Problem [live here](https://pjsalter.github.io/the-monty-hall-problem) 🚪 🐐 🚙
 
 
