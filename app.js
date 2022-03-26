@@ -196,7 +196,7 @@ doorImgOne.addEventListener('click', () => {
 //event handler for second door.
 
 doorImgTwo.addEventListener('click', () => {
-    console.log('second');
+    //console.log('second');
 	firstRow.hidden = true;
 	d2.hidden = false;
 	setTimeout(() => { d2.hidden = true; }, 1000);
@@ -256,7 +256,7 @@ doorImgTwo.addEventListener('click', () => {
 // event handler for third door.
 
 doorImgThree.addEventListener('click', () => {
-console.log('third');
+//console.log('third');
 	firstRow.hidden = true;
 	d3.hidden = false;
 	setTimeout(() => { d3.hidden = true; }, 1000);
