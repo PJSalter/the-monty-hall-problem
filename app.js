@@ -316,94 +316,29 @@ switchForNo.addEventListener('click', () => {
 // function to display the result of the player if they were to switch and win.
 const mindChangeAndWon = (switchAndWin) => {
     switchAndWin.classList.add('result')
-    
-    // if(!switchAndWin){
-        
-
-    //     switchAndWin.classList.add('result')
-    //     switchAndWin.style.display = "block";
-    //     wholeBody.hidden = true;
     wholeBody.style.display = 'none'
-    // } else {
-    //     switchAndWin.hidden = true;
-    //     switchAndWin.classList.remove('result')
-    //     wholeBody.hidden = false;
-    //    }
-	
 	switchAndWin.hidden = false;
-    // playAgain.style.display = 'flex';
-    // getResult.style.display = 'flex';
 }
 
 // function to display results on when a player will switch but then lose by ther choice of switching.
 const mindChangeAndLost = (switchAndLose) => {
     switchAndLose.classList.add('result')
-    // if(!switchAndLose){
-        
-
-       
-    //     switchAndLose.classList.add('result')
-    //     switchAndLose.style.display = "block"
-        // wholeBody.hidden = true;
-       wholeBody.style.display = 'none'
-    // } else {
-        
-    //     wholeBody.hidden = false;
-    //     switchAndLose.classList.remove('result')
-    //     switchAndLose.hidden = true;
-    // }
-    // wholeBody.hidden = true;
+    wholeBody.style.display = 'none'
     switchAndLose.hidden = false;
-    // playAgain.style.display = 'flex';
-    // getResult.style.display = 'flex';
 }
 
 // a function that contains results for when a user doesn't switch and the wins.
 const wonWithoutSwitching = (noSwitchAndWin) => {
     noSwitchAndWin.classList.add('result')
-    // if(!noSwitchAndWin){
-        
-
-    //     noSwitchAndWin.classList.add('result')
-    //     // noSwitchAndWin.hidden = true;
-        // wholeBody.hidden = true;
-        wholeBody.style.display = 'none'
-    //     noSwitchAndWin.style.display = "block"
-    //     wholeBody.hidden = true
-    // } else {
-    //     noSwitchAndWin.classList.remove('result')
-    //     noSwitchAndWin.hidden = true;
-    //     wholeBody.hidden = false
-        
-
-    // }
-    // wholeBody.hidden = true;
+    wholeBody.style.display = 'none'
     noSwitchAndWin.hidden = false;
-    // playAgain.style.display = 'flex';
-    // getResult.style.display = 'flex';
 }
 
 // function to display results when a user does not switch and then loses.
 const lostAndNoSwitch = (noSwitchAndLose) => {
     noSwitchAndLose.classList.add('result')
-    // if(!noSwitchAndLose){
-    //     noSwitchAndLose.classList.add('result')
-        
-    //     noSwitchAndLose.style.display = "block"
-        // wholeBody.hidden = true;
-        wholeBody.style.display = 'none'
-    //     // noSwitchAndLose.hidden = false;
-    // } else {
-    //     noSwitchAndLose.classList.remove('result')
-    //     wholeBody.hidden = false;
-        
-    //     noSwitchAndLose.hidden = true;
-       
-    // }
-    // wholeBody.hidden = true;
+    wholeBody.style.display = 'none'
     noSwitchAndLose.hidden = false;
-    // playAgain.style.display = 'flex';
-    // getResult.style.display = 'flex';
 }
 
 
