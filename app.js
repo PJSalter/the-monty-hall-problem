@@ -129,15 +129,14 @@ doorImgOne.addEventListener('click', () => {
 
 	//handling if the user makes a decision to switch yes, then the button will click.
     switchForYes.addEventListener('click', () => {
-
 		// if user opens the second door
 		// a message will appear on the app screen.
 		if (doorImgTwo.src === "challenge-image/goat.jpeg"){
 			secondRow.hidden = true;
-			instruct.innerHTML = "You chose to change to the third door";
+			instruct.innerHTML = "Door three will open...";
 			setTimeout(()=>{
 				instruct.innerHTML =
-				"exciting, we can now reveal this latest door";
+				"exciting...let's reveal the third door";
 			},1000);
 
 			// to open the door of choice by user.
@@ -146,27 +145,27 @@ doorImgOne.addEventListener('click', () => {
 
 			//will show a condition of the results on the actual page.
 			if (doorNumThreeWillOpen === youLost) {
-				setTimeout(() => { mindChangeAndLost(); }, 3500)
+				setTimeout(() => { mindChangeAndLost(switchAndLose); }, 3500)
 			} else {
-				setTimeout(() => { mindChangeAndWon(); }, 3500)
+				setTimeout(() => { mindChangeAndWon(switchAndWin); }, 3500)
 			}
 		}
 		//if the user chooses door three to open.
 		else if (doorImgThree.src === "challenge-image/goat.jpeg") {
 			secondRow.hidden = true;
-			instruct.innerHTML = "You wanted to open the second door";
+			instruct.innerHTML = "Door two will open...";
 			setTimeout(()=>{
 				instruct.innerHTML =
-				"exciting to reveal the second door";
+				"exciting...let's reveal the second door";
 			},1000);
 			
 			// for opening the door.
 			setTimeout(() => { doorImgTwo.src = doorNumTwoWillOpen; }, 2500);
 			//this will show the results page.
 			if (doorNumTwoWillOpen === youLost) {
-				setTimeout(() => { mindChangeAndLost(); }, 3500)
+				setTimeout(() => { mindChangeAndLost(switchAndLose); }, 3500)
 			} else {
-				setTimeout(() => { mindChangeAndWon(); }, 3500)
+				setTimeout(() => { mindChangeAndWon(switchAndWin); }, 3500)
 			}
 		}
 	})
@@ -186,9 +185,9 @@ doorImgOne.addEventListener('click', () => {
 		// Conditions to display the result page
 		if (doorNumOneWillOpen === youLost) {
             //error to fix
-			setTimeout(() => { lostAndNoSwitch(); }, 3500)
+			setTimeout(() => { lostAndNoSwitch(noSwitchAndLose); }, 3500)
 		} else {
-			setTimeout(() => { wonWithoutSwitching(); }, 3500)
+			setTimeout(() => { wonWithoutSwitching(noSwitchAndWin); }, 3500)
 		}
 	})
 })
@@ -197,6 +196,7 @@ doorImgOne.addEventListener('click', () => {
 //event handler for second door.
 
 doorImgTwo.addEventListener('click', () => {
+    console.log('second');
 	firstRow.hidden = true;
 	d2.hidden = false;
 	setTimeout(() => { d2.hidden = true; }, 1000);
@@ -214,15 +214,15 @@ doorImgTwo.addEventListener('click', () => {
     switchForYes.addEventListener('click', () => {
 		if (doorImgOne.src === "challenge-image/goat.jpeg") {
 			secondRow.hidden = true;
-			instruct.innerHTML = "You wanted to change to door three"
+			instruct.innerHTML = "Door three will open..."
 			setTimeout(() =>
 			{ instruct.innerHTML =
 			"whats the new door............"; }, 1000);
 			setTimeout(() => { doorImgThree.src = doorNumThreeWillOpen; }, 2500);
 			if (doorNumThreeWillOpen === youLost) {
-				setTimeout(() => { mindChangeAndLost(); }, 3500)
+				setTimeout(() => { mindChangeAndLost(switchAndLose); }, 3500)
 			} else {
-				setTimeout(() => { mindChangeAndWon(); }, 3500)
+				setTimeout(() => { mindChangeAndWon(switchAndWin); }, 3500)
 			}
 		} else if (doorImgThree.src === "challenge-image/goat.jpeg") {
 			secondRow.hidden = true;
@@ -231,9 +231,9 @@ doorImgTwo.addEventListener('click', () => {
 			= "Revealing your chosen door......"; }, 1000);
 			setTimeout(() => { doorImgOne.src = doorNumOneWillOpen; }, 2500);
 			if (doorNumOneWillOpen === youLost) {
-				setTimeout(() => { mindChangeAndLost(); }, 3500)
+				setTimeout(() => { mindChangeAndLost(switchAndLose); }, 3500)
 			} else {
-				setTimeout(() => { mindChangeAndWon(); }, 3500)
+				setTimeout(() => { mindChangeAndWon(switchAndWin); }, 3500)
 			}
 		}
 	})
@@ -245,9 +245,9 @@ doorImgTwo.addEventListener('click', () => {
 		"what will door two reveal....."; }, 1000);
 		setTimeout(() => { doorImgTwo.src = doorNumTwoWillOpen; }, 2500);
 		if (doorNumTwoWillOpen === youLost) {
-			setTimeout(() => { lostAndNoSwitch(); }, 3500)
+			setTimeout(() => { lostAndNoSwitch(noSwitchAndLose); }, 3500)
 		} else {
-			setTimeout(() => { wonWithoutSwitching(); }, 3500)
+			setTimeout(() => { wonWithoutSwitching(noSwitchAndWin); }, 3500)
 		}
 	})
 })
@@ -256,6 +256,7 @@ doorImgTwo.addEventListener('click', () => {
 // event handler for third door.
 
 doorImgThree.addEventListener('click', () => {
+console.log('third');
 	firstRow.hidden = true;
 	d3.hidden = false;
 	setTimeout(() => { d3.hidden = true; }, 1000);
@@ -276,9 +277,9 @@ doorImgThree.addEventListener('click', () => {
 			"what will door two reveal"; }, 1000);
 			setTimeout(() => { doorImgTwo.src = doorNumTwoWillOpen; }, 2500);
 			if (doorNumTwoWillOpen === youLost) {
-				setTimeout(() => { mindChangeAndLost(); }, 3500)
+				setTimeout(() => { mindChangeAndLost(switchAndLose); }, 3500)
 			} else {
-				setTimeout(() => { mindChangeAndWon(); }, 3500)
+				setTimeout(() => { mindChangeAndWon(switchAndWin); }, 3500)
 			}
 		} else if (doorImgTwo.src === "challenge-image/goat.jpeg") {
 			secondRow.hidden = true;
@@ -287,9 +288,9 @@ doorImgThree.addEventListener('click', () => {
 			"what will be revealed....."; }, 1000);
 			setTimeout(() => { doorImgOne.src = doorNumOneWillOpen; }, 2500);
 			if (doorNumOneWillOpen === youLost) {
-				setTimeout(() => { mindChangeAndLost(); }, 3500)
+				setTimeout(() => { mindChangeAndLost(switchAndLose); }, 3500)
 			} else {
-				setTimeout(() => { mindChangeAndWon(); }, 3500)
+				setTimeout(() => { mindChangeAndWon(switchAndWin); }, 3500)
 			}
 		}
 	})
@@ -302,9 +303,9 @@ switchForNo.addEventListener('click', () => {
         "I wonder whats underneath door number three........."; }, 1000);
         setTimeout(() => { doorImgThree.src = doorNumThreeWillOpen; }, 2500);
         if (doorNumThreeWillOpen === youLost) {
-	    setTimeout(() => { lostAndNoSwitch(); }, 3500)
+	    setTimeout(() => { lostAndNoSwitch(noSwitchAndLose); }, 3500)
         } else {  
-        setTimeout(() => { wonWithoutSwitching(); }, 3500)
+        setTimeout(() => { wonWithoutSwitching(noSwitchAndWin); }, 3500)
 		}
 
 	})
@@ -313,89 +314,94 @@ switchForNo.addEventListener('click', () => {
 
 
 // function to display the result of the player if they were to switch and win.
-const mindChangeAndWon = () => {
+const mindChangeAndWon = (switchAndWin) => {
     switchAndWin.classList.add('result')
     
-    if(switchAndWin){
+    // if(!switchAndWin){
         
 
-        switchAndWin.classList.add('result')
-        switchAndWin.style.display = "block"
-    } else {
-        switchAndWin.classList.remove('result')
-        wholeBody.hidden = true;
-       
-
-       
-        
-    }
-	// wholeBody.hidden = true;
-	// switchAndWin.hidden = false;
+    //     switchAndWin.classList.add('result')
+    //     switchAndWin.style.display = "block";
+    //     wholeBody.hidden = true;
+    wholeBody.style.display = 'none'
+    // } else {
+    //     switchAndWin.hidden = true;
+    //     switchAndWin.classList.remove('result')
+    //     wholeBody.hidden = false;
+    //    }
+	
+	switchAndWin.hidden = false;
     // playAgain.style.display = 'flex';
     // getResult.style.display = 'flex';
 }
 
 // function to display results on when a player will switch but then lose by ther choice of switching.
-const mindChangeAndLost = () => {
+const mindChangeAndLost = (switchAndLose) => {
     switchAndLose.classList.add('result')
-    if(switchAndLose){
+    // if(!switchAndLose){
         
 
        
-        switchAndLose.classList.add('result')
-        switchAndLose.style.display = "block"
-       
-    } else {
+    //     switchAndLose.classList.add('result')
+    //     switchAndLose.style.display = "block"
+        // wholeBody.hidden = true;
+       wholeBody.style.display = 'none'
+    // } else {
         
-        wholeBody.hidden = true;
-        switchAndLose.classList.remove('result')
-    }
+    //     wholeBody.hidden = false;
+    //     switchAndLose.classList.remove('result')
+    //     switchAndLose.hidden = true;
+    // }
     // wholeBody.hidden = true;
-    // switchAndLose.hidden = false;
+    switchAndLose.hidden = false;
     // playAgain.style.display = 'flex';
     // getResult.style.display = 'flex';
 }
 
 // a function that contains results for when a user doesn't switch and the wins.
-const wonWithoutSwitching = () => {
+const wonWithoutSwitching = (noSwitchAndWin) => {
     noSwitchAndWin.classList.add('result')
-    if(noSwitchAndWin){
+    // if(!noSwitchAndWin){
         
 
-        noSwitchAndWin.classList.add('result')
-        // noSwitchAndWin.hidden = true;
+    //     noSwitchAndWin.classList.add('result')
+    //     // noSwitchAndWin.hidden = true;
         // wholeBody.hidden = true;
-        noSwitchAndWin.style.display = "block"
-    } else {
-        noSwitchAndWin.classList.remove('result')
-        // noSwitchAndWin.hidden = false;
-        wholeBody.hidden = true
+        wholeBody.style.display = 'none'
+    //     noSwitchAndWin.style.display = "block"
+    //     wholeBody.hidden = true
+    // } else {
+    //     noSwitchAndWin.classList.remove('result')
+    //     noSwitchAndWin.hidden = true;
+    //     wholeBody.hidden = false
         
 
-    }
+    // }
     // wholeBody.hidden = true;
-    // noSwitchAndWin.hidden = false;
+    noSwitchAndWin.hidden = false;
     // playAgain.style.display = 'flex';
     // getResult.style.display = 'flex';
 }
 
 // function to display results when a user does not switch and then loses.
-const lostAndNoSwitch = () => {
+const lostAndNoSwitch = (noSwitchAndLose) => {
     noSwitchAndLose.classList.add('result')
-    if(noSwitchAndLose){
-        noSwitchAndLose.classList.add('result')
+    // if(!noSwitchAndLose){
+    //     noSwitchAndLose.classList.add('result')
         
-        noSwitchAndLose.style.display = "block"
-        // noSwitchAndLose.hidden = false;
-    } else {
-        noSwitchAndLose.classList.remove('result')
-        wholeBody.hidden = true;
+    //     noSwitchAndLose.style.display = "block"
+        // wholeBody.hidden = true;
+        wholeBody.style.display = 'none'
+    //     // noSwitchAndLose.hidden = false;
+    // } else {
+    //     noSwitchAndLose.classList.remove('result')
+    //     wholeBody.hidden = false;
         
-        // noSwitchAndLose.hidden = true;
+    //     noSwitchAndLose.hidden = true;
        
-    }
+    // }
     // wholeBody.hidden = true;
-    // noSwitchAndLose.hidden = false;
+    noSwitchAndLose.hidden = false;
     // playAgain.style.display = 'flex';
     // getResult.style.display = 'flex';
 }
