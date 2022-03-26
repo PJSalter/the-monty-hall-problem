@@ -22,6 +22,8 @@
 - [x] Use your software to show that switching doors is statistically the best option.
 - [x] The elegance of the output is not important so long as the program can be used to prove the point.
 
+![car](https://user-images.githubusercontent.com/45575016/160248676-f5b473fb-ab45-4eb5-ae05-ef9fbcdeb569.gif)
+
 # Logic:
 
 - ###### The whole point to the Monty Hall logic is that the host gives you a chance to pick which one is the car.
