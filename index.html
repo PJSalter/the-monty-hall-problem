@@ -8,7 +8,7 @@
     <title>the-monty-hall</title>
 </head>
 <body>
-    <main id="total-structure">
+    <div id="total-structure">
 
     <!-- This game will need space for the hose where they will interact -->
     <!-- The three doors section -->
@@ -31,9 +31,9 @@
 
         <div id="rowNumTwo" class="rowNumTwo">
 
-            <p>Here it opens</p>
+            <p>A door is opening...</p>
 
-            <p>Sure you want to open this particular door</p>
+            <p>Do you want to switch?</p>
 
             <div class="pressButtons">
                 <button id="yes-button">Yes</button>
@@ -44,7 +44,7 @@
 
     </section>
 
-    <section class="door-set">
+    <main class="door-set">
         <!-- image for all three doors -->
         <img id="doorOne" class="door"
              src="challenge-image/door-image.jpg" alt="wooden door">
@@ -53,8 +53,8 @@
         <img id="doorThree" class="door"
              src="challenge-image/door-image.jpg" alt="wooden door">
 
-    </section>
-    
+    </main>
+</div>
     <!-- div element indicating the result -->
     <div id="choiceIsYours" class="result">
 
@@ -73,7 +73,7 @@
 
     <p>Game Over! You Lose!</p>
     <p>The chances of winning were slim, However you still lost</p>
-    <p>second times a charm, you want to try again?</p>
+    <p>Second times a charm, you want to try again?</p>
 
         <div class="reset-to-play-again">
 
@@ -112,7 +112,7 @@
     </div>
 
 
-</main>
+
     <script src="app.js"></script>
 </body>
 </html>
