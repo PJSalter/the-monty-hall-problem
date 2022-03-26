@@ -4,6 +4,9 @@
 
 ###### Writing a program that demonstrates that Vos Savant is correct. You will use the output of your program to convince your interviewer that, after the host opens a door, switching doors is always the correct choice.
 
+![openDoor](https://user-images.githubusercontent.com/45575016/160248639-d237f3ac-379e-4ea7-9cdd-02005e75ab97.gif)
+
+
 # User Story:
 
 - ###### There will be three closed doors and the user will be given a choice to choose one of them. there is a car behind one of the doors, the other doors contain goats. it will function as the computer knows about the placement of the car and goats.
